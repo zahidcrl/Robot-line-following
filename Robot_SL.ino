@@ -1,5 +1,5 @@
-// ROBOT SL - v3
-// https://github.com/zahidcrl
+// Robot Line Following Code - v1
+// https://github.com/zahidcrl/Robot-line-following
 
 // Left Motor
 const int ENA = 5;
@@ -80,7 +80,7 @@ void loop() {
     int analogValue = analogRead(SENS_PIN[i]);
     int val = 0;
     
-    if (analogValue > thresholdSensor[i]) val = 1; 
+    if (analogValue < thresholdSensor[i]) val = 1; // FIX
     else val = 0;
     currentReading |= (val << (6 - i)); // FIX
   }
